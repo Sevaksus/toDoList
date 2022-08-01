@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  /* убираем отступы для значения ul */
+  /* внешний отступ от самого элемента*/
+  margin: 0;
+  /* отступ между содержанием элемента и его границей*/
+  padding: 0;
+}
+ul li {
+  /* стилизуем строки в таблице */
+  /* используем курсор pointer, рука с указательным пальцем */
+  cursor: pointer;
+  /* позиционируем элемент в документе относительно его обычного
+  положения, т.е. отно-но самого себя */
+  position: relative;
+  /* отступ между содержанием элемента и его границей*/
+  padding: 12px 8px 12px 40px;
+  /* цвет фона */
+  background: #eee;
+  /* размер шрифта */
+  font-size: 18px;
+  /* задаём время между двумя состояниями элемента */
+  transition: 0.2s;
+
+  /* создаём возможность выбора элементов */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Псевдокласс :nth-child используется для добавления стиля 
+  к элементам на основе нумерации в дереве элементов. 
+  odd- все нечётные номера элементов. even -Все чётные. */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+/* hover- псевдокласс задаёт стиль элемента при наведении мышки*/
+ul li:hover {
+  background: #ddd;
+}
+
+/* задаём стиль для выполненных задач*/
+ul li.checked {
+  /* цвет фона */
+  background: #888;
+  /* цвет текста */
+  color: #fff;
+  /* text-decoration- создаём подчёркнутый текст, зачёркнутый 
+  или линия сверху */
+  /* line-through - это зачёркнутый текст */
+  text-decoration: line-through;
+}
+
+/* Создаём состояние, что при "выполнении у задачи срабатывало 
+состояние "выполнено" */
+
+ul li.checked::before {
+  /* content позволяет вставлять генерируемое содержание в текст 
+  веб-страницы, которое первоначально в тексте отсутствует */
+  content: "";
+  /* позиционируем элемент в документе относительно его обычного
+  положения, т.е. отно-но краёв блока, который содержит элем-т */
+  position: absolute;
+  /* создаём границы элемента */
+  /* цвет, стиль (жирный), толщина */
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  /* отступы сверху и слева */
+  top: 10px;
+  left: 16px;
+  /* позволяет поворачивать, масштабировать, наклонять или 
+  сдвигать элемент */
+  transform: rotate(45deg);
+  /* высота, ширина */
+  height: 15px;
+  width: 7px;
+}
+
+/* стиль кнопки закрыть */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+/* стиль кнопки закрыть при наведении мышки */
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Стилизация header-а */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Не ясно что это*/
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Стиль поля ввода новой задачи */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  /* float- элемент должен быть взят из нормального потока и помещён 
+  вдоль левой или правой стороны его контейнера, где текст и 
+  встроенные элементы будут обтекать его */
+  float: left;
+  font-size: 16px;
+}
+
+/* Стиль кнопки "добавить" */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+/* Стиль кнопки "добавить" при наведении*/
+.addBtn:hover {
+  background-color: #bbb;
+}
